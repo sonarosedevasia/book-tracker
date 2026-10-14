@@ -1,0 +1,774 @@
+/* =========================================================
+   My Little Library - Warm Stone & Classic Wood Palette
+   ========================================================= */
+
+/* Reset & Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Warm Dark Wood Accent Palette */
+  --wood-darkest: #1a0f09;
+  --wood-dark: #2c1810;
+  --wood-mid: #3d2317;
+  --wood-light: #573322;
+  
+  /* Soft Warm Stone & Crisp Cream Palette */
+  --bg-stone: #f5f1ea;
+  --surface-white: #ffffff;
+  --surface-cream: #faf7f2;
+  --surface-parchment: #f6f2ea;
+  --border-subtle: #e4ded4;
+  --border-strong: #d5cbbf;
+  
+  /* Text Colors */
+  --text-primary: #24160e;
+  --text-secondary: #665347;
+  --text-muted: #8c786a;
+  
+  /* Bright Accent */
+  --accent-gold: #d97706;
+  --accent-gold-glow: #f59e0b;
+  --accent-gold-bg: rgba(217, 119, 6, 0.12);
+
+  /* Status Colors */
+  --status-finished: #2d5a3c;
+  --status-finished-bg: #f4f8f5;
+  --status-finished-border: #b8d6c0;
+  
+  --status-reading: #b45309;
+  --status-reading-bg: #fdf6ee;
+  --status-reading-border: #f8cf9b;
+  
+  --status-toread: #2b4c68;
+  --status-toread-bg: #f2f6fa;
+  --status-toread-border: #b5cde1;
+
+  /* Errors */
+  --error-color: #b91c1c;
+}
+
+/* Page Background: Professional, Clean, Soft Warm Stone */
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-stone);
+  color: var(--text-primary);
+  line-height: 1.5;
+  padding: 24px 16px 48px;
+  min-height: 100vh;
+}
+
+/* Base Responsive Container */
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  transition: max-width 0.25s ease;
+}
+
+/* =========================================================
+   Header Styling - Elegant Dark Wood Banner
+   ========================================================= */
+.app-header {
+  background: linear-gradient(145deg, #2e1a12, #1a0f0a);
+  border-radius: 12px;
+  padding: 26px 20px;
+  margin-bottom: 24px;
+  color: #fff9f0;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(36, 22, 14, 0.12);
+  border: 1px solid rgba(217, 119, 6, 0.28);
+}
+
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #44271a, #24140d);
+  border: 1.5px solid rgba(245, 158, 11, 0.45);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+  margin-bottom: 10px;
+  color: var(--accent-gold-glow);
+}
+
+.book-icon {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.header-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #fff9f0;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Cicero Quote */
+.header-quote {
+  margin-top: 8px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.45;
+}
+
+.quote-text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 0.98rem;
+  color: #ebdcd0;
+  display: block;
+}
+
+.quote-author {
+  display: inline-block;
+  font-size: 0.76rem;
+  color: #bfaea0;
+  font-style: normal;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* =========================================================
+   Main Layout Container (Single column on mobile, 2-col on desktop)
+   ========================================================= */
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* =========================================================
+   Index Card Form - Library Catalog Aesthetic
+   ========================================================= */
+.index-card {
+  background-color: var(--surface-white);
+  border-radius: 10px;
+  padding: 24px 20px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 2px 10px rgba(36, 22, 14, 0.04);
+}
+
+/* Top catalog header ribbon */
+.index-card-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  margin-bottom: 18px;
+  border-bottom: 2px solid #b84c2f; /* Red catalog rule */
+}
+
+.index-card-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #8c3b24;
+}
+
+.index-card-folio {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+/* Form Groups & Inputs */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--wood-dark);
+  margin-bottom: 6px;
+  letter-spacing: 0.01em;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--text-primary);
+  background-color: var(--surface-cream);
+  border: 1px solid var(--border-strong);
+  border-radius: 7px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  min-height: 44px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--accent-gold);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.16);
+}
+
+/* Error state on input */
+.form-group input.input-error {
+  border-color: var(--error-color);
+  background-color: #fff9f9;
+}
+
+.form-group input.input-error:focus {
+  border-color: var(--error-color);
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.15);
+}
+
+.error-message {
+  font-size: 0.82rem;
+  color: var(--error-color);
+  min-height: 18px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+/* Add Book Button - Polished Dark Wood */
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: #fff9f0;
+  background: linear-gradient(145deg, var(--wood-dark), #1c100a);
+  border: 1px solid rgba(217, 119, 6, 0.35);
+  border-radius: 7px;
+  cursor: pointer;
+  min-height: 44px;
+  margin-top: 6px;
+  box-shadow: 0 3px 8px rgba(36, 22, 14, 0.18);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(145deg, var(--wood-mid), var(--wood-dark));
+  border-color: var(--accent-gold);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(36, 22, 14, 0.22);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  background: #1c100a;
+}
+
+.btn-arrow {
+  color: var(--accent-gold-glow);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* =========================================================
+   Bookshelf Container
+   ========================================================= */
+.bookshelf {
+  background-color: var(--surface-white);
+  border-radius: 10px;
+  padding: 24px 20px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 2px 10px rgba(36, 22, 14, 0.04);
+}
+
+.shelf-header {
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--wood-dark);
+  letter-spacing: -0.01em;
+}
+
+/* =========================================================
+   Stat Tiles - 4 Clean Drawer Plates
+   ========================================================= */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.stat-tile {
+  background-color: var(--surface-cream);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 10px 8px;
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stat-tile:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.stat-num {
+  display: block;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--wood-dark);
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 3px;
+}
+
+/* Tile color accents */
+.stat-total {
+  border-top: 3px solid var(--wood-dark);
+}
+.stat-total .stat-label {
+  color: var(--wood-dark);
+}
+
+.stat-finished {
+  border-top: 3px solid var(--status-finished);
+}
+.stat-finished .stat-label {
+  color: var(--status-finished);
+}
+
+.stat-reading {
+  border-top: 3px solid var(--status-reading);
+}
+.stat-reading .stat-label {
+  color: var(--status-reading);
+}
+
+.stat-to-read {
+  border-top: 3px solid var(--status-toread);
+}
+.stat-to-read .stat-label {
+  color: var(--status-toread);
+}
+
+/* =========================================================
+   Search Input
+   ========================================================= */
+.search-group {
+  margin-bottom: 18px;
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 10px 14px 10px 40px;
+  font-size: 0.92rem;
+  font-family: inherit;
+  color: var(--text-primary);
+  background-color: var(--surface-cream);
+  border: 1px solid var(--border-strong);
+  border-radius: 7px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  min-height: 44px;
+}
+
+.search-wrapper input:focus {
+  border-color: var(--accent-gold);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.16);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =========================================================
+   Empty State
+   ========================================================= */
+.empty-state {
+  text-align: center;
+  padding: 32px 16px;
+  border: 1.5px dashed var(--border-strong);
+  border-radius: 8px;
+  background-color: var(--surface-cream);
+  margin-top: 6px;
+}
+
+.empty-icon {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  opacity: 0.85;
+}
+
+.empty-message {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* =========================================================
+   Book Cards - Book Spine & Ribbon Bookmark Aesthetic
+   ========================================================= */
+.book-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@keyframes bookFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.book-card {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 14px 16px 14px 18px;
+  border-radius: 7px;
+  gap: 12px;
+  animation: bookFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 6px rgba(36, 22, 14, 0.04);
+  border: 1px solid var(--border-subtle);
+}
+
+.book-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(36, 22, 14, 0.09);
+}
+
+/* Subtle groove line beside the book spine */
+.spine-groove {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 6px;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Spine edge colors & soft background tints */
+.spine-finished {
+  border-left: 8px solid var(--status-finished);
+  background-color: var(--status-finished-bg);
+}
+
+.spine-reading {
+  border-left: 8px solid var(--status-reading);
+  background-color: var(--status-reading-bg);
+}
+
+.spine-to-read {
+  border-left: 8px solid var(--status-toread);
+  background-color: var(--status-toread-bg);
+}
+
+/* Book Details */
+.book-info {
+  flex: 1;
+  min-width: 0; /* Prevents overflow with long words */
+  padding-left: 4px;
+}
+
+.book-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}
+
+.book-author {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-style: italic;
+}
+
+/* Card Actions Container */
+.book-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Ribbon-Style Bookmark Badge */
+.status-ribbon {
+  display: inline-block;
+  padding: 4px 10px 7px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  border-radius: 3px 3px 0 0;
+  /* Forked ribbon bookmark notch */
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4px), 50% 100%, 0 calc(100% - 4px));
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.2s ease;
+}
+
+.status-finished {
+  background-color: var(--status-finished);
+}
+
+.status-reading {
+  background-color: var(--status-reading);
+}
+
+.status-to-read {
+  background-color: var(--status-toread);
+}
+
+/* Card controls: dropdown + delete */
+.card-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-status-select {
+  padding: 5px 8px;
+  font-size: 0.8rem;
+  font-family: inherit;
+  color: var(--wood-mid);
+  background-color: #ffffff;
+  border: 1px solid var(--border-strong);
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  min-height: 32px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-status-select:focus {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.18);
+}
+
+/* Subtle vintage delete button */
+.btn-delete {
+  padding: 5px 9px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: #991b1b;
+  background-color: #fff4f4;
+  border: 1px solid #fecaca;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  min-height: 32px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-delete:hover {
+  background-color: #fee2e2;
+  border-color: #f87171;
+}
+
+.btn-delete:focus {
+  box-shadow: 0 0 0 2px rgba(185, 28, 28, 0.2);
+}
+
+/* =========================================================
+   Desktop Two-Column Layout (Screens wider than 900px)
+   ========================================================= */
+@media (min-width: 900px) {
+  .container {
+    max-width: 1100px;
+    padding: 0 8px;
+  }
+
+  .main-layout {
+    display: grid;
+    grid-template-columns: 390px 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  /* Form card keeps natural height, stays at top, and is sticky while scrolling */
+  .form-section.index-card {
+    position: sticky;
+    top: 24px;
+    align-self: start;
+    height: auto;
+    margin-bottom: 0;
+  }
+
+  .index-card form {
+    display: block;
+  }
+
+  /* Add Book button stays directly below the status field */
+  .index-card .btn-primary {
+    margin-top: 8px;
+  }
+
+  /* Bookshelf box capped at 80vh with fixed header/stats/search and scrolling list */
+  .bookshelf {
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh;
+    margin-bottom: 0;
+  }
+
+  /* Fixed top elements inside the bookshelf */
+  .shelf-header,
+  .stats-grid,
+  .search-group {
+    flex-shrink: 0;
+  }
+
+  /* Only the book list scrolls internally when there are many books */
+  .book-list {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 6px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-strong) var(--surface-cream);
+  }
+
+  .book-list::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .book-list::-webkit-scrollbar-track {
+    background: var(--surface-cream);
+    border-radius: 4px;
+  }
+
+  .book-list::-webkit-scrollbar-thumb {
+    background: var(--border-strong);
+    border-radius: 4px;
+  }
+
+  .book-list::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-gold);
+  }
+}
+
+/* =========================================================
+   Mobile Responsiveness (Phone-sized screens)
+   ========================================================= */
+@media (max-width: 480px) {
+  body {
+    padding: 16px 12px 32px;
+  }
+
+  .app-header {
+    padding: 22px 14px;
+    margin-bottom: 18px;
+  }
+
+  .header-title {
+    font-size: 1.75rem;
+  }
+
+  .quote-text {
+    font-size: 0.9rem;
+  }
+
+  .index-card,
+  .bookshelf {
+    padding: 18px 14px 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .stat-tile {
+    padding: 8px 4px;
+  }
+
+  .stat-num {
+    font-size: 1.25rem;
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
+  }
+
+  .book-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 12px 14px 14px 16px;
+  }
+
+  .book-actions {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px dashed rgba(0, 0, 0, 0.08);
+    padding-top: 8px;
+    margin-top: 2px;
+  }
+
+  .card-controls {
+    gap: 6px;
+  }
+}
