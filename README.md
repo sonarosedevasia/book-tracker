@@ -1,8 +1,8 @@
-# My Little Library
+# Book Tracker
 
 A book tracker where you keep a list of books you want to read, are reading, or have finished.
 
-**Live site:** [add your GitHub Pages link after publishing]
+**Live site:**  https://sonarosedevasia.github.io/book-tracker/
 
 ## Features
 - Add a book with title, author and status (title and author required)
